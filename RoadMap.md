@@ -79,7 +79,7 @@ The difference between them is that the components will be loaded by modules.
 ```js
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from '/app.component';
+import { AppComponent } from './app.component';
 ```
 
 As we saw before, the ``import`` is a method the IMPORT something, the ``{ NgModule }`` is the decorator imported and the rest is from where it comes.
@@ -105,6 +105,22 @@ export class AppModule {
 
 }
 ```
+
+
+## Starting the application
+
+To start the application we will create a file that will be responsable for this task
+
+- Go to ``/app`` and create a file ``main.ts``
+- Inside this file write the code:
+```js
+import { platformBrowserDynamic } from '@angular/PlatformBrowserDynamic';
+import { AppModule } from './app.module';
+
+const platform = PlatformBrowserDynamic();
+platform.bootstrapModule(AppModule);
+```
+
 
 
 
