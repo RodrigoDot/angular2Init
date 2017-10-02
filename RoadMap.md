@@ -121,6 +121,7 @@ const platform = PlatformBrowserDynamic();
 platform.bootstrapModule(AppModule);
 ```
 
+After it just run ``npm start``
 
 
 
