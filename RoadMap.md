@@ -40,14 +40,14 @@ Every component needs a class to become useful
 
 - Inside the ``/app/app.component.ts`` file
 - We will import the decorator ``Component`` from angular core
-```ts
+```js
 import { Component } grom '@angular/core';
 ```
 
 - ``import`` is a method to import (of course) some piece of code. we have to define what we want to import and ``from`` where it will be imported. In this case we are importing the Decorator ``Component`` from ``@angular/core``.
 
 - after import the decorator we will define and configurate it
-```ts
+```js
 @Component({
   selector: 'my-app',
   template: '
@@ -56,23 +56,55 @@ import { Component } grom '@angular/core';
   })
 ```
 
-- At first we define the component as ``@Component`` it will receive an objetc as parameter and these parameters must follow some angular rules. In this case we just created a ``selctor`` that will be used in the view to interact with our component and a ``template`` that will be as the name our component template in the view.
+- At first we define the component as ``@Component`` it will receive an objetc as parameter and these parameters must follow some angular rules. In this case we just created a ``selector`` that will be used in the view to interact with our component and a ``template`` that will be as the name our component template in the view.
 
 - Now we have to associate this component to a class to turn it useful to us
-```ts
-class AppComponent {
+```js
+export class AppComponent {
 
 }
 ```
 
-- The class that will associate the component must have the same name as the component ``app.component.ts`` > ``AppComponent``
+- The class that will associate the component must have the same name as the component ``app.component.ts`` > ``AppComponent``. And to be used to another element in the application we use the method ``export``.
 
 
+## Creating a Module
 
+The Angular 2 works using modules that execute the functions of the application.
+Module also are Angular Decorators and must be imported, declared, configurated and exported just like the compopnents.
+The difference between them is that the components will be loaded by modules.
 
+- Go to ``/app`` and create a file named as ``app.module.ts``, this will be the base module of the application. And the name follow the rule that every piece of the system that have association must have the same name, in this case "APP".
+-  Now let's write the code
+```js
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from '/app.component';
+```
 
+As we saw before, the ``import`` is a method the IMPORT something, the ``{ NgModule }`` is the decorator imported and the rest is from where it comes.
 
+- Now let's declare and cofigure the module
+```js
+@NgModule ({
+  imports: [BrowserModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+  })
+```
 
+Inside the module declaration we set some attributes just like we do inside the compopnents. Here we set the ``imports``, ``declarations`` and the ``bootstrap``.
+
+- The ``imports[]`` will be responsables to load the others modules, if we have to import someone;
+- The ``declarations[]`` will load all components that we will use in this module;
+- And the ``bootstrap[]`` is the primary component, it is the component that is responsable to initiate the module.
+
+After doing this, we have to associate it to a class, just like we did in the component
+```js
+export class AppModule {
+
+}
+```
 
 
 
