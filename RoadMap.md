@@ -124,6 +124,31 @@ platform.bootstrapModule(AppModule);
 After it just run ``npm start``
 
 
+## Sending data to the view (interpolation)
+
+When we want to show some data on the view, we use the interpolation of the angular. It is simple.
+
+- Declare the container of the data inside the class body
+```js
+export class AppComponent {
+
+  title = "Minha pagina";
+
+}
+```
+Here we declared a class ``AppComponent``. And inside it we declared a data container ``title`` and associated something to it.
+
+- Now we have to access this data container inside the view
+```js
+@Component ({
+  selector: 'my-app',
+  template: `
+    <h1>{{ title }}</h1>
+    `
+})
+```
+Doing this whatever there is inside the data container will be transported to the view. We can also do some logic expression inside the ``{{ }}`` if we want. Like this ``{{ 2 + 2 }}`` and it will show ``4`` in the view.
+
 
 
 
