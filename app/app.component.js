@@ -19,7 +19,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{ title }}</h1>\n    {{ data }}\n    "
+            template: "\n    <h1>{{ title }}</h1>\n    <input [(ngModel)]=\"title\">\n    {{ title }}\n    "
         })
     ], AppComponent);
     return AppComponent;

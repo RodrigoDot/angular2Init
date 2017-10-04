@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
     <h1>{{ title }}</h1>
-    {{ data }}
+    <input [(ngModel)]="title">
+    {{ title }}
     `
 })
 

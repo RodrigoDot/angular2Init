@@ -124,7 +124,7 @@ platform.bootstrapModule(AppModule);
 After it just run ``npm start``
 
 
-## Sending data to the view (interpolation)
+## Sending data to the view (interpolation) (one way data-binding)
 
 When we want to show some data on the view, we use the interpolation of the angular. It is simple.
 
@@ -150,8 +150,30 @@ Here we declared a class ``AppComponent``. And inside it we declared a data cont
 Doing this whatever there is inside the data container will be transported to the view. We can also do some logic expression inside the ``{{ }}`` if we want. Like this ``{{ 2 + 2 }}`` and it will show ``4`` in the view.
 
 
+## Interpolation (two way data-binding)
 
+We have already learned how to make the Interpolation of some data, sinding data from the component to the view. Now we will make another type of interpolation, we will send data from the component to the view and the inverse way too.
+To work using forms in Angular2 we have to import the decorator responsable to deal with this. Inside the ``/app/app.module.ts`` put the code below.
+```ts
+import { FormsModule } from '@angular/forms';
+//...the rest of the code
+@NgModule ({
+  imports: [BrowserModule, FormsModule],
+  //...the rest of the code
+})
+```
 
+Now let's prepare our view to work with this. Now inside the ``/app/app.component.ts`` change to be like this.
+```js
+@component ({
+  selector: 'my-app',
+  template: `
+    <h1>{{ title }}</h1>
+    <input [(ngModel)]="title" />
+  `
+})
+```
+We put another element inside the view ``<input [(ngModel)]="title">`` this tag makes the magic providing the powers of the Angular2 interpolation. Everything that you put in this input will change the value of the ``{{ title }}`` binding in everywhere it is in your view.
 
 
 
