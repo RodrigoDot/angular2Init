@@ -175,7 +175,7 @@ Now let's prepare our view to work with this. Now inside the ``/app/app.componen
 ```
 We put another element inside the view ``<input [(ngModel)]="title">`` this tag makes the magic providing the powers of the Angular2 interpolation. Everything that you put in this input will change the value of the ``{{ title }}`` binding in everywhere it is in your view.
 
-s
+ss
 
 
 
