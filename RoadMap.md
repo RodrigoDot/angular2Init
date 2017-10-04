@@ -175,7 +175,12 @@ Now let's prepare our view to work with this. Now inside the ``/app/app.componen
 ```
 We put another element inside the view ``<input [(ngModel)]="title">`` this tag makes the magic providing the powers of the Angular2 interpolation. Everything that you put in this input will change the value of the ``{{ title }}`` binding in everywhere it is in your view.
 
-ss
+
+## The difference between the types of interpolation {{}}, [] and [()]
+
+As we saw, there are two diferent ways to use the interpolation in Angular2;
+- One way - The data only can be changed in the component: using ``{{ }}`` if it's not a html tag or ``[]`` as a html tag attribute.
+- Two way - The data can be changed in the component and in the view: using ``[()]`` as a html tag attribute.
 
 
 
