@@ -19,7 +19,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h1>{{ title }}</h1>\n    <input [(ngModel)]=\"title\">\n    <input [ngModel]=\"title\" type=\"text\"/>\n    <div className=\"divider\"></div>\n    <div class=\"input-field col s12\">\n    <select>\n      <option value=\"\" disabled selected>Choose your option</option>\n      <option value=\"1\">Option 1</option>\n      <option value=\"2\">Option 2</option>\n      <option value=\"3\">Option 3</option>\n    </select>\n    <label>Materialize Select</label>\n  </div>\n    "
+            templateUrl: 'app/app.component.html'
         })
     ], AppComponent);
     return AppComponent;
