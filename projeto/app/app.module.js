@@ -7,22 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.title = "Minha pagina";
-        this.data = {
-            'id': 1,
-            'nome': 'Rodrigo',
-            'role': 'admin'
-        };
+var platform_browser_1 = require("@angular/platform-browser");
+var app_component_1 = require("./app.component");
+var forms_1 = require("@angular/forms");
+require("../public/js/selectorInit.js");
+var AppModule = /** @class */ (function () {
+    function AppModule() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n    <h1>{{ title }}</h1>\n    <input [(ngModel)]=\"title\">\n    {{ title }}\n    "
+    AppModule = __decorate([
+        core_1.NgModule({
+            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+            declarations: [app_component_1.AppComponent],
+            bootstrap: [app_component_1.AppComponent]
         })
-    ], AppComponent);
-    return AppComponent;
+    ], AppModule);
+    return AppModule;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.AppModule = AppModule;
+//# sourceMappingURL=app.module.js.map
